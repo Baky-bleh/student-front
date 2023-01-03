@@ -1,0 +1,28 @@
+{
+   "universityList" : [
+   {
+      "id":"1",
+      "name":"NMIT",
+      "mergejil":"",
+      "description":"Үнэн мэдлэг бүтээлч оюун"
+   },
+   {
+      "id":"2",
+      "name":"Shutis",
+      "mergejil":"",
+      "description":"Эх орны хөгжлийг тодорхойлно"
+   },
+   {
+      "id":"3",
+      "name":"MUIS",
+      "mergejil":"",
+      "description":"МУИС-ийн алсын хараа нь \"дэлхийн түвшний их сургууль\" болоход оршино. "
+   },
+   {
+      "id":"4",
+      "name":"ih zasag",
+      "mergejil":"When app stores entered the mainstream tech culture, they exposed developers to an audience of millions...",
+      "description":"We can’t get enough of our mobile apps. There were 204 billion apps downloads last year, and that number is rising in 2020.  When app stores entered the mainstream tech culture, they exposed developers to an audience of millions who were keen to adopt the innovative capabilities"
+   }
+]
+}
