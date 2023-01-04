@@ -34,9 +34,13 @@ const ArticleList = ({ articles }) => {
       </div>
       <div>
         <div className={articleStyles.grid}>
-          {articles.map((article) => (
-            <ArticleItem article={article} />
-          ))}
+          {articles.map((article) => {
+                return (<div key={article.id}>
+                      <ArticleItem article={article}/>
+                    </div>
+                );
+              }
+          )}
         </div>
       </div>
     </div>

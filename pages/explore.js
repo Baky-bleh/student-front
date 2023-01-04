@@ -1,33 +1,33 @@
-import { server } from '../config'
+// import { server } from '../config'
+import { articles } from '../data'
 import ArticleList from '../components/ArticleList'
+import {useEffect, useState} from "react";
+import {useRouter} from "next/router";
+import Pages from "../layout/Pages";
 
-export default function Explore({ articles }) {
+export default function Explore() {
+  const [loading,setLoading] = useState(true)
+  const router = useRouter()
+  useEffect(() => {
+    if(sessionStorage.getItem("authenticated") === "false"){
+      setLoading(true)
+      router.push("/auth/login")
+    }
+    else{
+      setLoading(false)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <div>
-      <ArticleList articles={articles} />
+      {
+        loading ?
+            null
+            :
+            <> { articles ? <ArticleList articles={articles}/> : null }  </>
+      }
     </div>
   )
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch(`${server}/api/articles`)
-  const string = await res.text();
-      const articles = string === "" ? {} : JSON.parse(string);
-  
-  return {
-    props: {
-      articles,
-    },
-  }
-}
-
-// export const getStaticProps = async () => {
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
-//   const articles = await res.json()
-
-//   return {
-//     props: {
-//       articles,
-//     },
-//   }
-// }
+Explore.layout = Pages;

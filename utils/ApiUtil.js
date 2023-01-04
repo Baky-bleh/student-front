@@ -63,20 +63,13 @@ export async function updateUser(user){
     })
 }
 
-// login
-// export async function login(){
-    
-//     const tokenres = await fetch('http://localhost:3300/auth/login',{
-//         method:'POST',
-//         headers:{
-//             'Content-Type': 'application/json',
-//         },
-//         body: json.stringify({email: email, password: password})
-//     })
-    
-// }
-
-
+export async function login(email,password){
+    return request({
+        url: process.env.API_BASE_URL + "auth/login",
+        method: 'POST',
+        body: JSON.stringify({email: email, password: password})
+    })
+}
 
 // university
 export function createUniversity(UniversityName){

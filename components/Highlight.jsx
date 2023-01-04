@@ -17,11 +17,8 @@ const Highlight = ({ children, testId }) => {
       console.error(error);
       throw Error(`Cannot register the language ${language}`);
     }
-  }, []);
-
-  useEffect(() => {
     codeNode && codeNode.current && hljs.highlightBlock(codeNode.current);
-  });
+  }, []);
 
   if (!isLoaded) return null;
 

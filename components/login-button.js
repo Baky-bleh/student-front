@@ -1,1 +1,5 @@
-export default () => <a href="/api/custom-login">Нэвтрэх</a>;
+export default function LoginButton() {
+    return(
+        <a href="/api/custom-login">Нэвтрэх</a>
+    )
+}

@@ -1,8 +1,10 @@
 import SignupPage from '../../components/Auth/Signup'
+import Auth from "../../layout/Auth";
 
-async function Register() {
+export default function Register() {
     return (
         <SignupPage />
     )
 }
-export default Register()
+
+Register.layout = Auth;
